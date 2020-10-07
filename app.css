@@ -1,3 +1,73 @@
+@keyframes winkMove {
+  0% {
+    /* opacity: 0; */
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    /* opacity: 1; */
+    transform: rotate(-10deg);
+  }
+}
+@keyframes shakeHands {
+  0% {
+    transform: scale(1.5);
+  }
+ 
+  50% {
+    transform: scale(1);
+  }
+ 
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes disapperAtFirst {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 :root {
   --neutral: white;
   --black: black;
@@ -72,11 +142,13 @@ header .right {
 main {
   margin-top: 100px;
   text-align: center;
+  position: relative;
 }
 main h1 {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 40px;
+  animation: disapperAtFirst 2s 0.5s ease-in-out;
 }
 main p {
   font-size: 22px;
@@ -84,6 +156,114 @@ main p {
 }
 main img {
   width: 400px;
+}
+
+.wink {
+  animation: winkMove 3s infinite ease-out;
+  display: inline-block;
+}
+.languages-i-speak {
+  position: absolute;
+  right: 15%;
+  top: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  animation: moveInLeft 1s ease;
+}
+
+.language-i-speak {
+  color: var(--darker);
+  font-size: 14px;
+  padding-left: 4px;
+  padding-bottom: 2px;
+  margin: 10px 4px;
+  text-transform: uppercase;
+}
+.language-i-speak-html {
+  border-left: 3px solid yellow;
+  border-bottom: 3px solid yellow;
+}
+.language-i-speak-css {
+  border-left: 3px solid blue;
+  border-bottom: 3px solid blue;
+}
+.language-i-speak-sass {
+  border-left: 3px solid purple;
+  border-bottom: 3px solid purple;
+}
+.language-i-speak-js {
+  border-left: 3px solid darkorange;
+  border-bottom: 3px solid darkorange;
+}
+.language-i-speak-python {
+  border-left: 3px solid blue;
+  border-bottom: 3px solid yellow;
+}
+.language-i-speak-django {
+  border-left: 3px solid var(--darker);
+  border-bottom: 3px solid var(--darker);
+}
+.language-i-speak-react {
+  border-left: 3px solid rgb(75, 203, 207);
+  border-bottom: 3px solid rgb(75, 203, 207);
+}
+.language-i-speak-nodejs {
+  border-left: 3px solid var(--light);
+  border-bottom: 3px solid var(--light);
+}
+@media screen and (max-width: 1200px) {
+  .languages-i-speak {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    top: 93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation: moveInDown 1s;
+  }
+  .language-i-speak {
+    color: var(--darker);
+    font-size: 8px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    margin: 10px 4px;
+    text-transform: uppercase;
+  }
+  .language-i-speak-html {
+    border-left: 2px solid yellow;
+    border-bottom: 2px solid yellow;
+  }
+  .language-i-speak-css {
+    border-left: 2px solid blue;
+    border-bottom: 2px solid blue;
+  }
+  .language-i-speak-sass {
+    border-left: 2px solid purple;
+    border-bottom: 2px solid purple;
+  }
+  .language-i-speak-js {
+    border-left: 2px solid darkorange;
+    border-bottom: 2px solid darkorange;
+  }
+  .language-i-speak-python {
+    border-left: 2px solid blue;
+    border-bottom: 2px solid yellow;
+  }
+  .language-i-speak-django {
+    border-left: 2px solid var(--darker);
+    border-bottom: 2px solid var(--darker);
+  }
+  .language-i-speak-react {
+    border-left: 2px solid rgb(75, 203, 207);
+    border-bottom: 2px solid rgb(75, 203, 207);
+  }
+  .language-i-speak-nodejs {
+    border-left: 2px solid var(--light);
+    border-bottom: 2px solid var(--light);
+  }
 }
 @media screen and (max-width: 600px) {
   main {
@@ -293,7 +473,6 @@ main img {
   text-transform: uppercase;
 }
 
-
 .recent-work p,
 .work-overlay a {
   font-size: 20px;
@@ -328,8 +507,8 @@ main img {
 }
 .label-startup {
   position: absolute;
-  top: 10px;
-  left: 0;
+  top: 50px;
+  right: 0;
   background-color: var(--light);
   color: var(--darker);
   padding: 5px;
@@ -481,6 +660,10 @@ main img {
 .call-for-collaboration a:hover {
   background-color: var(--light);
   color: var(--darker);
+}
+.hands {
+  animation: shakeHands 3s infinite;
+  display: inline-block;
 }
 @media screen and (max-width: 600px) {
   .call-for-collaboration {
