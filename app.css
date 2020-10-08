@@ -507,8 +507,8 @@ main img {
 }
 .label-startup {
   position: absolute;
-  top: 50px;
-  right: 0;
+  top: 10px;
+  left:  0;
   background-color: var(--light);
   color: var(--darker);
   padding: 5px;
