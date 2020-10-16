@@ -11,15 +11,30 @@
     transform: rotate(-10deg);
   }
 }
+@keyframes beepingButton {
+  0% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.349);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.349);
+  }
+}
 @keyframes shakeHands {
   0% {
     transform: scale(1.5);
   }
- 
+
   50% {
     transform: scale(1);
   }
- 
+
   100% {
     transform: scale(1.5);
   }
@@ -508,7 +523,7 @@ main img {
 .label-startup {
   position: absolute;
   top: 10px;
-  left:  0;
+  left: 0;
   background-color: var(--light);
   color: var(--darker);
   padding: 5px;
@@ -706,4 +721,30 @@ footer a:hover {
 }
 .copyright {
   margin-top: 40px;
+}
+.floating-what-i-worked-on-today,
+.floating-what-i-worked-on-today:active,
+.floating-what-i-worked-on-today:visited {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  z-index: 4;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 5px;
+  animation: beepingButton 1s infinite ease-in-out;
+}
+@media screen and (max-width: 600px) {
+  .floating-what-i-worked-on-today,
+  .floating-what-i-worked-on-today:active,
+  .floating-what-i-worked-on-today:visited {
+    bottom: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
 }
